@@ -1,0 +1,29 @@
+<h1>Reference Question</h1>
+<p>Request received: <%= Time.now %></p>
+
+<div class="user">
+  <h2>Patron info</h2>
+  <strong>Name: </strong> <%= @request.user_name %><br>
+  <strong>Email: </strong> <a href="mailto:<%= @request.user_email %>"><%= @request.user_email %></a><br/>
+  <strong>Date: </strong> <%= @request.date %><br>
+  <strong>Notes for Staff: </strong>
+  <div>
+    <strong>Collection details, if any: </strong>
+    <%= (@request.collection || "").gsub(/[\n\r]/,"<br>\n") %>
+  </div>
+  <div>
+    <strong>Question: </strong>
+    <%= (@request.question || "").gsub(/[\n\r]/,"<br>\n") %>
+  </div>
+    <div>
+    <strong>Works consulted, if any: </strong>
+    <%= (@request.consulted || "").gsub(/[\n\r]/,"<br>\n") %>
+  </div>
+</div>
+
+<div class="request">
+  <h2>Relevant record</h2>
+  <%= @request.to_text_array(false).each do |info| %>
+    <%= info%><br>
+  <% end %>
+</div>

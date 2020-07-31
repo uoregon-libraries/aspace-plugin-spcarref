@@ -8,14 +8,16 @@
 </div>
 
 <div class="user">
- 
-  <strong>Date: </strong> <%= @request.date %><br>
   <strong>Notes sent to staff: </strong>
   <div>
     <strong>Collection details, if any: </strong>
     <%= (@request.collection || "").gsub(/[\n\r]/,"<br>\n").html_safe %>
+  </div>
+  <div>
     <strong>Question: </strong>
     <%= (@request.question || "").gsub(/[\n\r]/,"<br>\n").html_safe %>
+  </div>
+  <div>
     <strong>Works consulted, if any: </strong>
     <%= (@request.consulted || "").gsub(/[\n\r]/,"<br>\n").html_safe %>
   </div>

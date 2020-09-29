@@ -2,7 +2,7 @@ Plugins::extend_aspace_routes(File.join(File.dirname(__FILE__), "routes.rb"))
 
 Rails.application.config.after_initialize do
 class QuestionMailer < ApplicationMailer
-  prepend_view_path "/archivesspace/plugins/spcarref/public/views"
+  prepend_view_path "/archivesspace/#{AppConfig[:plugins_directory]}/aspace-plugin-spcarref/public/views"
   def question_received_email(request)
     user_email = request.user_email
 

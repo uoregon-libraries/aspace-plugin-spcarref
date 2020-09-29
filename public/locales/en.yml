@@ -1,0 +1,14 @@
+en:
+  actions:
+    request: Ask A Question
+
+  request:
+    email_header: Thank you for your question
+    submit: Submit Question
+    submitted: Thank you, your question has been submitted. You should receive an email confirmation.
+    question: Question 
+    consulted: Resources previously consulted
+    collection: Collection information
+    collection_placeholder: Provide specific collection details such as titles and/or identifiers as needed.
+    email:
+      subject: "Question regarding %{title}"

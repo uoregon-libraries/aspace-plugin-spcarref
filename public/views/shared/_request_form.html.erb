@@ -31,6 +31,32 @@
       <%= label_tag(:consulted, t('request.consulted'),  :class => 'sr-only') %>
       <%= text_area_tag :consulted, nil, :rows=> "3", :cols => "25", :placeholder => t('request.consulted'), :class => 'form-control' %>
     </div>
+   <div class="form-group required ">
+      <%= label_tag(:current_year, "#{t('request.current_year')} #{t('request.required')}",  :class => 'sr-only') %>
+      <div class="input-group">
+        <%= text_field_tag :current_year, nil, :placeholder => t('request.current_year'), :class => 'form-control' %>
+        <div class="input-group-addon">
+          <span class="required aria-hidden"><%= t('request.required') %></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group required ">
+      <fieldset>
+      <legend class="form-group-legend"><%= t('request.personhood') %> </legend>
+      <div class="input-group">
+        <%= label_tag(:personhood_y, t('request.test_answer_a'), :class => 'radio-grp-label') %>
+        <%= radio_button_tag(:personhood, 'y', false, class: 'radio-grp') %>
+        <%= label_tag(:personhood_n, t('request.test_answer_b'), :class => 'radio-grp-label') %>
+        <%= radio_button_tag(:personhood, 'n', false, class: 'radio-grp') %>
+        <%= label_tag(:personhood_u, t('request.test_answer_c'),  :class => 'radio-grp-label') %>
+        <%= radio_button_tag(:personhood, 'u', false, class: 'radio-grp') %>
+        <div class="input-group-addon">
+          <span class="required aria-hidden"><%= t('request.required') %></span>
+        </div>
+      </div>
+      </fieldset>
+    </div>
+
     <div class="form-group honeypot">
       <span class="aria-hidden">
         <%= label_tag :comment %>

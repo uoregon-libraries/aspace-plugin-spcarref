@@ -10,5 +10,11 @@ en:
     consulted: Resources previously consulted
     collection: Collection information
     collection_placeholder: Provide specific collection details such as titles and/or identifiers as needed.
+    personhood: 'I am a spambot:'
+    test_answer_a: 'yes'
+    test_answer_b: 'no'
+    test_answer_c: 'unknown'
+    current_year: Current year in 4 digits
+    failed: "We're sorry, your question could not be processed."
     email:
       subject: "Question regarding %{title}"

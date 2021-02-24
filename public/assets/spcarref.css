@@ -1,0 +1,10 @@
+.form-group-legend {
+  font-size: 14px;
+  color: blue;
+}
+.radio-grp {
+  margin-right: 15px !important;
+}
+.radio-grp-label {
+  font-weight: 500;
+}

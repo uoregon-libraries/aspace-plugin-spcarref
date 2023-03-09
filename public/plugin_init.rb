@@ -36,7 +36,7 @@ class QuestionMailer < ApplicationMailer
 
   # Adding this as email should always come from the fallback address for our hosted service
   def from_email
-    fallback_from  = AppConfig[:pui_request_email_fallback_from_address]
+    AppConfig[:pui_request_email_fallback_from_address]
   end
 
   def email_address(request, type = :from)

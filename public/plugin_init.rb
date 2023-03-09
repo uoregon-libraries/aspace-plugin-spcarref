@@ -8,7 +8,7 @@ class QuestionMailer < ApplicationMailer
 
     @request = request
 
-    mail(from: email_address(@request),
+    mail(from: from_email,
          to: user_email,
          subject: I18n.t('request.email.subject', :title => request.title),
          template_path: 'mailer')
@@ -17,7 +17,7 @@ class QuestionMailer < ApplicationMailer
   def question_received_staff_email(request)
     @request = request
 
-    mail(from: email_address(@request),
+    mail(from: from_email,
          to: email_address(@request, :to),
          subject: I18n.t('request.email.subject', :title => request.title),
          template_path: 'mailer')
@@ -33,6 +33,11 @@ class QuestionMailer < ApplicationMailer
   # end
 
   private
+
+  # Adding this as email should always come from the fallback address for our hosted service
+  def from_email
+    AppConfig[:pui_request_email_fallback_from_address]
+  end
 
   def email_address(request, type = :from)
     use_repo_email = AppConfig[:pui_request_use_repo_email]
